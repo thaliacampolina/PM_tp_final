@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Collection;
@@ -22,12 +23,15 @@ public class OpenFiles {
 	
 	public void readUsers(Collection<User> users)
 	{
+        String filePath = new File("").getAbsolutePath();
+        System.out.println("path: "+filePath);
 		System.out.println("entrou rearusers");
 		try
 		{
 			System.out.println("this.nameFileUser = "+this.nameFileUser);
 			System.out.println("antes buffer read");
-			BufferedReader in = new BufferedReader(new FileReader("u.user"));
+			//BufferedReader in = new BufferedReader(new FileReader("u.user"));
+			BufferedReader in = new BufferedReader(new FileReader(filePath + "/../../filmes100k/u.user"));
 			System.out.println("depois buffer read");
 			String linha;
 			System.out.println("oi");
