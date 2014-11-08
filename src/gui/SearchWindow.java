@@ -1,13 +1,10 @@
 package gui;
 
 import java.awt.*;
-
 import javax.swing.*;
+import model.gui.*;
 
-import model.gui.FieldPanel;
-import model.gui.MainPanel;
-
-public class SearchWindow extends JFrame
+public class SearchWindow extends JFrame 
 {
 	public SearchWindow ()
 	{
@@ -21,10 +18,10 @@ public class SearchWindow extends JFrame
 		setResizable(false);
 		
 		// Sair quando fechar
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		// Container para o layout da janela
-		Container	contentPane = getContentPane ();
+		Container contentPane = getContentPane ();
 		
 		// Adiciona coisas
 		contentPane.add(new MainPanel());
@@ -36,12 +33,5 @@ public class SearchWindow extends JFrame
 		setVisible(true);
 	}
 	
-	/*
-	 * Teste
-	 */
-	public static void main (String[] args)
-	{
-		new SearchWindow();
-		
-	}
-}
+}    
+
