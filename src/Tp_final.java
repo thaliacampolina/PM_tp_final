@@ -1,0 +1,16 @@
+import static javax.swing.SwingUtilities.invokeLater;
+
+public class Tp_final {
+    
+    public static void main(String[] args) {
+        new Splash(); 
+        Splash.DelayTime(11000);
+        invokeLater(new Runnable(){
+            @Override
+            public void run() {
+                new FirstScreen().setVisible(true);
+            }
+        });
+        
+    }
+}
