@@ -22,5 +22,4 @@ public class User {
 	public String getGender(){return this.gender;}
 	public String getOccupation(){return this.occupation;}
 	public String getZipCode(){return this.zipCode;}
-
 }

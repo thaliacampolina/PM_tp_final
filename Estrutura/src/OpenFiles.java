@@ -71,7 +71,7 @@ public class OpenFiles {
 		}
 	}
 	
-	public void readMovie(Collection<Movie> movies)
+	public void readMovie(Collection<Movie> movies, Collection<Data> data)
 	{
 		String filePath = new File("").getAbsolutePath();
 		try
@@ -88,21 +88,21 @@ public class OpenFiles {
 				linha = in.readLine();
 				//System.out.println("linha = "+linha);
 				String movieId = linha.substring(0, linha.indexOf('|'));
-				System.out.print("movieId = "+movieId);
+				//System.out.print("movieId = "+movieId);
 				linha = linha.substring(linha.indexOf('|') + 1);
 				//System.out.println("linha = "+linha);
 				String movieTitleTemp = linha.substring(0, linha.indexOf('('));
 				String movieTitle = movieTitleTemp.substring(0, movieTitleTemp.length() -1);
-				System.out.print("   movieTitle = "+movieTitle);
+				//System.out.print("   movieTitle = "+movieTitle);
 				linha = linha.substring(linha.indexOf('(') + 1);
 				//System.out.println("linha = "+linha);
 				//linha = linha.substring(linha.indexOf('|') + 1, linha.lastIndexOf('|'));
 				String releaseDate =  linha.substring(0, linha.indexOf(')'));
-				System.out.print("   releaseDate = "+releaseDate);
+				//System.out.print("   releaseDate = "+releaseDate);
 				linha = linha.substring(linha.indexOf('|') + 1);
 				//System.out.println("linha = "+linha);
 				String videoReleaseDate = linha.substring(0, linha.indexOf('|'));
-				System.out.println("   videoReleaseDate = "+videoReleaseDate);
+				//System.out.println("   videoReleaseDate = "+videoReleaseDate);
 				linha = linha.substring(linha.indexOf('|') + 1);
 				//System.out.println("linha = "+linha);
 				String no = linha.substring(0, linha.indexOf('|'));
@@ -128,7 +128,7 @@ public class OpenFiles {
 				Genre genere = new Genre(gen);
 				//System.out.println("declarou");
 				Movie movie = new Movie(movieId, movieTitle,releaseDate,
-						videoReleaseDate, imdbUrl, genere);
+						videoReleaseDate, imdbUrl, genere, data);
 				//System.out.println("instanciou");
 				movies.add(movie);
 				//System.out.println("adicionou");
