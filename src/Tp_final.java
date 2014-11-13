@@ -6,7 +6,6 @@ public class Tp_final {
         new Splash(); 
         Splash.DelayTime(11000);
         invokeLater(new Runnable(){
-            @Override
             public void run() {
                 new FirstScreen().setVisible(true);
             }

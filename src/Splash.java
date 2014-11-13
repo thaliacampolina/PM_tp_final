@@ -45,7 +45,6 @@ public class Splash extends JWindow{
     
     private void StartProgressBar(){
         progressBarTimer = new Timer(TIMER_PAUSE, new ActionListener(){
-            @Override
             public void actionPerformed(ActionEvent arg0) {
                 progressBar.setValue(count);
                 if (count == PROGBAR_MAX){

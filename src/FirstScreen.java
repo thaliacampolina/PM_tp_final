@@ -42,14 +42,12 @@ public class FirstScreen extends JFrame{
         
         //listeners section
         exit.addActionListener(new ActionListener(){
-            @Override
             public void actionPerformed(ActionEvent e){
                 System.exit(0);
             }
         });
         
         doSearch.addActionListener(new ActionListener(){
-            @Override
             public void actionPerformed(ActionEvent e){
                 new SearchWindow().setVisible(true);
             }
