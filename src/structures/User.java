@@ -1,3 +1,5 @@
+package structures;
+
 
 public class User {
 	private int id;

@@ -1,8 +1,8 @@
 package gui;
 
 import java.awt.*;
+
 import javax.swing.*;
-import model.gui.*;
 
 public class SearchWindow extends JFrame 
 {

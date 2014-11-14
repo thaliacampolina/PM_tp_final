@@ -1,3 +1,4 @@
+package structures;
 
 public class Data {
 	private String userId;

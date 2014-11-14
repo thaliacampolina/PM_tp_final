@@ -1,3 +1,4 @@
+package structures;
 
 public class Genre {
 	 private int unknown;
