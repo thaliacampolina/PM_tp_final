@@ -1,15 +1,14 @@
-package structures;
-
+import structures.*;
 import java.awt.List;
 import java.util.ArrayList;
 import java.util.Collection;
 
 
 public class Main {
-	public static String NAME_FILE_USERS = "/../filmes100k/u.user";
-	public static String NAME_FILE_GENRE = "/../filmes100k/u.genre";
-	public static String NAME_FILE_MOVIE = "/../filmes100k/u.item";
-	public static String NAME_FILE_DATA = "/../filmes100k/u.data";
+	public static String NAME_FILE_USERS = "//../filmes100k/u.user";
+	public static String NAME_FILE_GENRE = "//../filmes100k/u.genre";
+	public static String NAME_FILE_MOVIE = "//../filmes100k/u.item";
+	public static String NAME_FILE_DATA = "//../filmes100k/u.data";
 		
 	public static void main (String[] args)
 	{
@@ -25,7 +24,7 @@ public class Main {
     	// dataVideoreleaseOfMovie
 		
 		//AQUI VOCE COLOCA O DADO QUE O USUARIO DIGITOU REFERENTE A BUSCA
-        String dataOfSerach = "";
+        //String dataOfSearch = "";
 		
 		OpenFiles op = new OpenFiles(NAME_FILE_USERS, NAME_FILE_DATA,
 				NAME_FILE_MOVIE, NAME_FILE_GENRE);
@@ -53,7 +52,7 @@ public class Main {
         
         
 		Search search = new Search(typeOfSearch);
-		selection = search.firstsearch(movie, dataOfSerach);
+		selection = search.firstsearch(movie, dataOfSearch);
 		
 		//POR FIM TE RETORNO TODOS OS OBJETOS QUE POSSUEM OS DADOS SOLICITADOS
 		
