@@ -4,16 +4,17 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 
-public class Main {
-	public static String NAME_FILE_USERS = "//../filmes100k/u.user";
-	public static String NAME_FILE_GENRE = "//../filmes100k/u.genre";
-	public static String NAME_FILE_MOVIE = "//../filmes100k/u.item";
-	public static String NAME_FILE_DATA = "//../filmes100k/u.data";
+public class FinalSeaarch {
+	public  String NAME_FILE_USERS = "//../filmes100k/u.user";
+	public  String NAME_FILE_GENRE = "//../filmes100k/u.genre";
+	public  String NAME_FILE_MOVIE = "//../filmes100k/u.item";
+	public  String NAME_FILE_DATA = "//../filmes100k/u.data";
+	
+	public FinalSeaarch(){}
 		
-	public static void main (String[] args)
+	public void search (String typeOfSearch, String dataOfSearch)
 	{
 		//AQUI VOCE DIZ QUAL TIPO DE BUSCA QUER E A COLOCA ABAIXO
-        String typeOfSearch = "";
         //OS TIPOS POSSIVEIS SAO:
         //nameOfMovie : busca por nome de filme  
     	// idOfMovie: busca por id do filme		
@@ -24,7 +25,6 @@ public class Main {
     	// dataVideoreleaseOfMovie
 		
 		//AQUI VOCE COLOCA O DADO QUE O USUARIO DIGITOU REFERENTE A BUSCA
-        //String dataOfSearch = "";
 		
 		OpenFiles op = new OpenFiles(NAME_FILE_USERS, NAME_FILE_DATA,
 				NAME_FILE_MOVIE, NAME_FILE_GENRE);
