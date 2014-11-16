@@ -73,7 +73,7 @@ public class MainPanel  extends JPanel implements ActionListener
        // Criar e adicionar painel para exibir informacoes do filme
        JPanel informations = new JPanel ();
        informations.setLayout (new BoxLayout(informations, BoxLayout.Y_AXIS));
-       informations.setPreferredSize(new Dimension(50,50));
+       informations.setPreferredSize(new Dimension(772,451));
        scroll.setViewportView (informations);
        scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);  
        scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
