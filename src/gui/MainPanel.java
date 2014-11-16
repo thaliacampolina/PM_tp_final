@@ -16,7 +16,7 @@ public class MainPanel  extends JPanel implements ActionListener
    private FieldPanel rating = new FieldPanel ("Rating de usu�rios (1-5): " , 2);
    private JButton search = new JButton ("Pesquisar");
    private JButton clear = new JButton ("Limpar");
-   private JScrollPane scroll;
+   private JScrollPane scroll = new JScrollPane();
    
    private JFormattedTextField textField;
    
@@ -69,7 +69,7 @@ public class MainPanel  extends JPanel implements ActionListener
        // Adicionar action listeners nos botoes
        search.addActionListener(this);
        clear.addActionListener(this);
-       
+      
        // Criar e adicionar painel para exibir informacoes do filme
        JPanel informations = new JPanel ();
        informations.setLayout (new BoxLayout(informations, BoxLayout.Y_AXIS));
