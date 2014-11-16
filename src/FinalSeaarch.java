@@ -13,7 +13,7 @@ public class FinalSeaarch {
 	
 	public FinalSeaarch(){}
 		
-	public void readDatas (String typeOfSearch, String dataOfSearch)
+	public void readDatas ()
 	{
 		//AQUI VOCE DIZ QUAL TIPO DE BUSCA QUER E A COLOCA ABAIXO
         //OS TIPOS POSSIVEIS SAO:
