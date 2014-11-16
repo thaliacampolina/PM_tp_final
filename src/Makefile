@@ -22,4 +22,4 @@ default: classes
 classes: $(CLASSES:.java=.class)
 
 run: classes
-	$(JCR) Main 
+	$(JCR) Tp_final

@@ -27,7 +27,7 @@ public class MainPanel  extends JPanel implements ActionListener
 	   // Cria radio buttons
 	   JRadioButton nameRB 		= new JRadioButton ("Nome");
 	   JRadioButton yearRB		= new JRadioButton ("Ano");
-	   JRadioButton genreRB 	= new JRadioButton ("Gênero");
+	   JRadioButton genreRB 	= new JRadioButton ("Genero");
 	   JRadioButton ratingRB	= new JRadioButton ("Rating");
 	   
 	   // Seta comandos para os radio buttons

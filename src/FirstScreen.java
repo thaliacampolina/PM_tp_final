@@ -8,6 +8,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 import gui.SearchWindow;
+import javax.swing.JOptionPane;
+import static javax.swing.SwingUtilities.invokeLater;
 
 public class FirstScreen extends JFrame{
     public FirstScreen(){
@@ -47,9 +49,20 @@ public class FirstScreen extends JFrame{
             }
         });
         
+        importDatabase.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                new FinalSeaarch().readDatas();
+                JOptionPane.showMessageDialog(null, "Loaded successfully!", "Information", JOptionPane.INFORMATION_MESSAGE);
+            }
+        });
+        
         doSearch.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                new SearchWindow().setVisible(true);
+                invokeLater(new Runnable(){
+                    public void run() {
+                        new SearchWindow().setVisible(true);
+                    }
+                });   
             }
         });
     }
