@@ -197,7 +197,19 @@ public class MainPanel  extends JPanel implements ActionListener
            year.setTextField ("");
            genre.setTextField ("");
            rating.setTextField ("");
+           clear();
        }
+   }
+   
+   private void clear ()
+   {
+	   Component[] cs = informations.getComponents();
+	   
+	   for (Component c : cs)
+		   informations.remove(c);
+	   
+	   informations.validate();
+	   informations.repaint();
    }
 }
 
