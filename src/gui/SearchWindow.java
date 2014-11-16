@@ -32,6 +32,10 @@ public class SearchWindow extends JFrame
 		// Visivel
 		setVisible(true);
 	}
-	
+	/*
+	public static void main (String[] args)
+	   {
+		   new SearchWindow ();
+	   }*/
 }    
 

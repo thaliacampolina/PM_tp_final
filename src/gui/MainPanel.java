@@ -18,17 +18,19 @@ public class MainPanel  extends JPanel implements ActionListener
    private JButton clear = new JButton ("Clear");
    private JScrollPane scroll = new JScrollPane();
    
+   // Subs
+   private JPanel informations		= new JPanel ();
+   private JRadioButton nameRB 		= new JRadioButton ("Name");
+   private JRadioButton yearRB		= new JRadioButton ("Year");
+   private JRadioButton genreRB 	= new JRadioButton ("Genre");
+   private JRadioButton ratingRB	= new JRadioButton ("Rating");
+   private  String typeOfSearch		= "";
+   
    private JFormattedTextField textField;
    
    public MainPanel () 
    {
 	   ButtonGroup RBGroup = new ButtonGroup ();
-	   
-	   // Cria radio buttons
-	   JRadioButton nameRB 		= new JRadioButton ("Name");
-	   JRadioButton yearRB		= new JRadioButton ("Year");
-	   JRadioButton genreRB 	= new JRadioButton ("Genre");
-	   JRadioButton ratingRB	= new JRadioButton ("Rating");
 	   
 	   // Seta comandos para os radio buttons
 	   nameRB.setActionCommand("nameOfMovie");
@@ -71,7 +73,6 @@ public class MainPanel  extends JPanel implements ActionListener
        clear.addActionListener(this);
       
        // Criar e adicionar painel para exibir informacoes do filme
-       JPanel informations = new JPanel ();
        informations.setLayout (new BoxLayout(informations, BoxLayout.Y_AXIS));
        informations.setPreferredSize(new Dimension(767,461));
        scroll.setViewportView (informations);
@@ -80,6 +81,8 @@ public class MainPanel  extends JPanel implements ActionListener
        
        add (scroll);
        informations.add(new JLabel ("oi oi oi oi oi oio i\noioioioioi"));
+       informations.add(new JLabel (typeOfSearch));
+       /*informations.add(new JLabel ("uhuuul"));
        informations.add(new JLabel ("uhuuul"));
        informations.add(new JLabel ("uhuuul"));
        informations.add(new JLabel ("uhuuul"));
@@ -168,9 +171,7 @@ public class MainPanel  extends JPanel implements ActionListener
        informations.add(new JLabel ("uhuuul"));
        informations.add(new JLabel ("uhuuul"));
        informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("fim"));
+       informations.add(new JLabel ("fim"));*/
        setLayout (new FlowLayout (FlowLayout.LEFT));
        
    }
@@ -179,9 +180,16 @@ public class MainPanel  extends JPanel implements ActionListener
    {
        Object obj = e.getSource ();
        
-       if (obj == search)
+       if (obj instanceof JRadioButton)
        {
-           // Pegar as coisas dos edit text pra salvar
+    	   informations.add(new JLabel (e.getActionCommand()));
+    	   informations.validate();
+    	   informations.repaint();
+    	   typeOfSearch = e.getActionCommand();
+       }
+       else if (obj == search)
+       {
+
        }
        else if (obj == clear)
        {
