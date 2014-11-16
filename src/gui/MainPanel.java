@@ -8,14 +8,14 @@ import javax.swing.*;
 
 public class MainPanel  extends JPanel implements ActionListener
 {
-   private JLabel welcome = new JLabel ("\n  Insira o tipo de pesquisa: \n");
+   private JLabel welcome = new JLabel ("\n  Insert your search type: \n");
    private JPanel radioPanel = new JPanel (new GridLayout (0,4));
-   private FieldPanel name = new FieldPanel ("Nome do filme: " , 50);
-   private FieldPanel year = new FieldPanel ("Ano: " , 3);
-   private FieldPanel genre = new FieldPanel ("G�nero: " , 10);
-   private FieldPanel rating = new FieldPanel ("Rating de usu�rios (1-5): " , 2);
-   private JButton search = new JButton ("Pesquisar");
-   private JButton clear = new JButton ("Limpar");
+   private FieldPanel name = new FieldPanel ("Name: " , 50);
+   private FieldPanel year = new FieldPanel ("Year: " , 3);
+   private FieldPanel genre = new FieldPanel ("Genre: " , 10);
+   private FieldPanel rating = new FieldPanel ("Users' rating (1-5): " , 2);
+   private JButton search = new JButton ("Search");
+   private JButton clear = new JButton ("Clear");
    private JScrollPane scroll = new JScrollPane();
    
    private JFormattedTextField textField;
@@ -25,9 +25,9 @@ public class MainPanel  extends JPanel implements ActionListener
 	   ButtonGroup RBGroup = new ButtonGroup ();
 	   
 	   // Cria radio buttons
-	   JRadioButton nameRB 		= new JRadioButton ("Nome");
-	   JRadioButton yearRB		= new JRadioButton ("Ano");
-	   JRadioButton genreRB 	= new JRadioButton ("Genero");
+	   JRadioButton nameRB 		= new JRadioButton ("Name");
+	   JRadioButton yearRB		= new JRadioButton ("Year");
+	   JRadioButton genreRB 	= new JRadioButton ("Genre");
 	   JRadioButton ratingRB	= new JRadioButton ("Rating");
 	   
 	   // Seta comandos para os radio buttons
