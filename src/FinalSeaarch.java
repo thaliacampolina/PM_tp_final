@@ -12,7 +12,7 @@ public class FinalSeaarch {
 	
 	public FinalSeaarch(){}
 		
-	public void search (String typeOfSearch, String dataOfSearch)
+	public Collection<Movie> search (String typeOfSearch, String dataOfSearch)
 	{
 		//AQUI VOCE DIZ QUAL TIPO DE BUSCA QUER E A COLOCA ABAIXO
         //OS TIPOS POSSIVEIS SAO:
@@ -64,6 +64,7 @@ public class FinalSeaarch {
 			System.out.println("Date release = "+m.getReleaseDate());	
 			System.out.println("video data release = "+m.getVideoReleaseDate());
 		}
-		//System.out.println("genre"+m.getGenre());		
+		//System.out.println("genre"+m.getGenre());	
+		return selection;
 	}
 }
