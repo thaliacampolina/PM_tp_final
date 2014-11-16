@@ -3,16 +3,17 @@ import java.awt.List;
 import java.util.ArrayList;
 import java.util.Collection;
 
-
 public class FinalSeaarch {
 	public  String NAME_FILE_USERS = "//../filmes100k/u.user";
 	public  String NAME_FILE_GENRE = "//../filmes100k/u.genre";
 	public  String NAME_FILE_MOVIE = "//../filmes100k/u.item";
 	public  String NAME_FILE_DATA = "//../filmes100k/u.data";
 	
+	public Collection<Movie> m;
+	
 	public FinalSeaarch(){}
 		
-	public Collection<Movie> search (String typeOfSearch, String dataOfSearch)
+	public void readDatas (String typeOfSearch, String dataOfSearch)
 	{
 		//AQUI VOCE DIZ QUAL TIPO DE BUSCA QUER E A COLOCA ABAIXO
         //OS TIPOS POSSIVEIS SAO:
@@ -43,8 +44,12 @@ public class FinalSeaarch {
 		
 		//ler e instanciar movies
         op.readMovie(movie, data);
-
-       
+        
+        this.m = movie;
+	}
+	
+	public Collection<Movie> search (String typeOfSearch, String dataOfSearch)
+	{
 		
 		//collection de filme, dado a pesquisar
         Collection<Movie> selection = new ArrayList<Movie>();
@@ -52,7 +57,7 @@ public class FinalSeaarch {
         
         
 		Search search = new Search(typeOfSearch);
-		selection = search.firstsearch(movie, dataOfSearch);
+		selection = search.firstsearch(this.m, dataOfSearch);
 		
 		//POR FIM TE RETORNO TODOS OS OBJETOS QUE POSSUEM OS DADOS SOLICITADOS
 		
