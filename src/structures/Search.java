@@ -54,7 +54,7 @@ public class Search {
 		{
 			//System.out.println("m.getMovieTitle() = "+m.getMovieTitle());
 			//System.out.println("data = "+data);
-			return m.getMovieTitle().equals(data);
+			return m.getMovieTitle().toLowerCase().contains(data.toLowerCase());
 		}
 		else if(this.typeOfSearch.equals("idOfMovie"))
 		{

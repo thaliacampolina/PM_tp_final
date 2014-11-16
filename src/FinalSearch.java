@@ -3,7 +3,7 @@ import java.awt.List;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class FinalSeaarch {
+public class FinalSearch {
 	public  String NAME_FILE_USERS = "//../filmes100k/u.user";
 	public  String NAME_FILE_GENRE = "//../filmes100k/u.genre";
 	public  String NAME_FILE_MOVIE = "//../filmes100k/u.item";
@@ -11,7 +11,7 @@ public class FinalSeaarch {
 	
 	public Collection<Movie> m;
 	
-	public FinalSeaarch(){}
+	public FinalSearch(){}
 		
 	public void readDatas ()
 	{
