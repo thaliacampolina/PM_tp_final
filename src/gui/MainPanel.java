@@ -3,8 +3,11 @@ package gui;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.*;
+
+import structures.Movie;
 
 public class MainPanel  extends JPanel implements ActionListener
 {
@@ -24,7 +27,9 @@ public class MainPanel  extends JPanel implements ActionListener
    private JRadioButton yearRB		= new JRadioButton ("Year");
    private JRadioButton genreRB 	= new JRadioButton ("Genre");
    private JRadioButton ratingRB	= new JRadioButton ("Rating");
-   private  String typeOfSearch		= "";
+   private String typeOfSearch		= "nameOfMovie";
+   private String whatToSearch		= "";
+   private ArrayList<Movie> movieList = new ArrayList<Movie> ();
    
    private JFormattedTextField textField;
    
@@ -40,6 +45,7 @@ public class MainPanel  extends JPanel implements ActionListener
 	   
 	   // Seta o nome como padrao inicial
 	   nameRB.setSelected(true);
+	   updateEditable ();
 	   
 	   // Adicionar radio buttons em um grupo
 	   RBGroup.add (nameRB);
@@ -75,103 +81,13 @@ public class MainPanel  extends JPanel implements ActionListener
        // Criar e adicionar painel para exibir informacoes do filme
        informations.setLayout (new BoxLayout(informations, BoxLayout.Y_AXIS));
        informations.setPreferredSize(new Dimension(767,461));
-       scroll.setViewportView (informations);
+       scroll = new JScrollPane(informations);
+       //scroll.setViewportView (informations);
        scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);  
        scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
        
        add (scroll);
-       informations.add(new JLabel ("oi oi oi oi oi oio i\noioioioioi"));
-       informations.add(new JLabel (typeOfSearch));
-       /*informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("uhuuul"));
-       informations.add(new JLabel ("fim"));*/
+       
        setLayout (new FlowLayout (FlowLayout.LEFT));
        
    }
@@ -183,13 +99,15 @@ public class MainPanel  extends JPanel implements ActionListener
        if (obj instanceof JRadioButton)
        {
     	   informations.add(new JLabel (e.getActionCommand()));
+    	   typeOfSearch = e.getActionCommand();
+    	   updateEditable ();
     	   informations.validate();
     	   informations.repaint();
-    	   typeOfSearch = e.getActionCommand();
        }
        else if (obj == search)
        {
-
+    	   clear ();
+    	   
        }
        else if (obj == clear)
        {
@@ -210,6 +128,80 @@ public class MainPanel  extends JPanel implements ActionListener
 	   
 	   informations.validate();
 	   informations.repaint();
+   }
+   
+   private void updateEditable ()
+   {
+	   if (typeOfSearch.equals("nameOfMovie"))
+	   {
+		   name.enable();
+		   year.disable();
+		   genre.disable();
+		   rating.disable();
+	   }
+	   else if (typeOfSearch.equals("dataReleaseOfMovie"))
+	   {
+		   name.disable();
+		   year.enable();
+		   genre.disable();
+		   rating.disable();
+	   }
+	   else if (typeOfSearch.equals("genreOfMovie"))
+	   {
+		   name.disable();
+		   year.disable();
+		   genre.enable();
+		   rating.disable();
+	   }
+	   else if (typeOfSearch.equals("noteOfMovie"))
+	   {
+		   name.disable();
+		   year.disable();
+		   genre.disable();
+		   rating.enable();
+	   }
+   }
+   
+   private boolean getTextView ()
+   {
+	   if (typeOfSearch.equals("nameOfMovie"))
+		   whatToSearch = name.getText();
+
+	   else if (typeOfSearch.equals("dataReleaseOfMovie"))
+		   whatToSearch = year.getText();
+
+	   else if (typeOfSearch.equals("genreOfMovie"))
+		   whatToSearch = genre.getText();
+	   
+	   else if (typeOfSearch.equals("noteOfMovie"))
+		   whatToSearch = rating.getText();
+	   
+	   if (whatToSearch.length() == 0)
+	   {
+		   informations.add(new JLabel ("Invalid information."));
+    	   informations.validate();
+    	   informations.repaint();
+    	   return false;
+	   }
+	   return true;
+   }
+   
+   private boolean movieListIsEmpty (ArrayList<Movie> movieList)
+   {
+	   if (movieList.size() == 0)
+	   {
+		   informations.add(new JLabel ("No movie was found."));
+    	   informations.validate();
+    	   informations.repaint();
+    	   return true;
+	   }
+	   
+	   return false;
+   }
+   
+   private void showMovies ()
+   {
+	   
    }
 }
 

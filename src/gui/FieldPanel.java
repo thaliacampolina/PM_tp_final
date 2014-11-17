@@ -28,4 +28,19 @@ public class FieldPanel extends JPanel
 	{
 		textField.setText(s);
 	}
+	
+	public void enable ()
+	{
+		this.textField.setEditable(true);
+	}
+	
+	public void disable ()
+	{
+		this.textField.setEditable(false);
+	}
+	
+	public String getText ()
+	{
+		return this.textField.getText();
+	}
 }
