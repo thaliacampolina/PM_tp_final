@@ -9,8 +9,8 @@ public class SearchWindow extends JDialog
 	public SearchWindow ()
 	{
 		// Titulo
-		super();
-                setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
+		//super();
+        //setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
 		setTitle("Movie Search");
 		
 		// Tamanho

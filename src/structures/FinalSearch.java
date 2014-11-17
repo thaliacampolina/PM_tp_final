@@ -22,7 +22,7 @@ public class FinalSearch {
     	// idOfMovie: busca por id do filme		
     	// genreOfMovie: busca por genero de filme	
     	// urlOfMovie : busca por URL do filme		
-    	// rateOfMovie : busca por nota de usuário sobre o filme 
+    	// noteOfMovie : busca por nota de usuário sobre o filme 
     	// dataReleaseOfMovie : busca por ano do filme		
     	// dataVideoreleaseOfMovie
 		
@@ -61,6 +61,16 @@ public class FinalSearch {
 		selection = search.firstsearch(this.m, dataOfSearch);
 		
 		//POR FIM TE RETORNO TODOS OS OBJETOS QUE POSSUEM OS DADOS SOLICITADOS
+		
+		for(Movie m : selection)
+		{
+			System.out.println(""+m.getMovieTitle());	
+			System.out.println("URL = "+m.getImdbUrl());	
+			System.out.println("ID = "+m.getMovieId());	
+			System.out.println("Date release = "+m.getReleaseDate());	
+			System.out.println("video data release = "+m.getVideoReleaseDate());
+		}
+		//System.out.println("genre"+m.getGenre());	
 		return selection;
 	}
 }
