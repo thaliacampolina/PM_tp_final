@@ -4,11 +4,13 @@ import java.awt.*;
 
 import javax.swing.*;
 
-public class SearchWindow extends JFrame 
+public class SearchWindow extends JDialog 
 {
 	public SearchWindow ()
 	{
 		// Titulo
+                super();
+                setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
 		setTitle("Busca de filmes");
 		
 		// Tamanho
@@ -30,7 +32,7 @@ public class SearchWindow extends JFrame
 		
 		
 		// Visivel
-		setVisible(true);
+		//setVisible(true);
 	}
 	/*
 	public static void main (String[] args)

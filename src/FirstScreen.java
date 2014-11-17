@@ -56,7 +56,7 @@ public class FirstScreen extends JFrame{
         
         importDatabase.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                new FinalSearch().readDatas();
+                new FinalSeaarch().readDatas();
                 JOptionPane.showMessageDialog(null, "Loaded successfully!", "Information", JOptionPane.INFORMATION_MESSAGE);
             }
         });

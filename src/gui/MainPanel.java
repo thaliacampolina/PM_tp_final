@@ -192,10 +192,10 @@ public class MainPanel  extends JPanel implements ActionListener
    {
 	   if (movieList.size() == 0)
 	   {
-		   informations.add(new JLabel ("No movie was found."));
-    	   informations.validate();
-    	   informations.repaint();
-    	   return true;
+		informations.add(new JLabel ("No movie was found."));
+                informations.validate();
+                informations.repaint();
+                return true;
 	   }
 	   
 	   return false;
@@ -203,7 +203,7 @@ public class MainPanel  extends JPanel implements ActionListener
    
    private void showMovies ()
    {
-	   FinalSearch fs = new FinalSearch ();
+        FinalSeaarch fs = new FinalSaearch ();
        fs.readDatas();
 	   movieList = new ArrayList (fs.search(typeOfSearch, whatToSearch));
 	   
