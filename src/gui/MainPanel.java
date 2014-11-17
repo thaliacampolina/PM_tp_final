@@ -214,7 +214,15 @@ public class MainPanel  extends JPanel implements ActionListener
 			   s += "Name: "+movieList.get(i).getMovieTitle()+"<br>";
 			   s += "Year: "+movieList.get(i).getReleaseDate()+"<br>";
 			   s += "Release date: "+movieList.get(i).getVideoReleaseDate()+"<br>";
-			   // adicionar generos
+			   ArrayList<String> movieGenres = movieList.get(i).getAllGenres();
+			   s += "Genre(s): ";
+			   for (int y = 0 ; y < movieGenres.size() ; y++)
+			   {
+				   if (y == movieGenres.size()-1)
+					   s += movieGenres.get(y) + "<br>";
+				   else
+					   s += movieGenres.get(y) + ", ";
+			   } 
 			   s += "Rating: "+movieList.get(i).getAverengeNote()+"<br>";
 			   s += "<br><br>";
 		   }
