@@ -1,4 +1,6 @@
 import static javax.swing.SwingUtilities.invokeLater;
+import gui.FirstScreen;
+import gui.Splash;
 import structures.FinalSearch;
 
 public class Tp_final {

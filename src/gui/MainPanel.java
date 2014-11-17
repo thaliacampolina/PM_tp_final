@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 import structures.FinalSearch;
-import structures.Genre;
 import structures.Movie;
 
 public class MainPanel  extends JPanel implements ActionListener
@@ -32,8 +31,7 @@ public class MainPanel  extends JPanel implements ActionListener
    private String typeOfSearch		= "nameOfMovie";
    private String whatToSearch		= "";
    private ArrayList<Movie> movieList = new ArrayList<Movie> ();
-   
-   private JFormattedTextField textField;
+
    
    public MainPanel () 
    {
@@ -205,7 +203,7 @@ public class MainPanel  extends JPanel implements ActionListener
    {
 	   FinalSearch fs = new FinalSearch ();
        fs.readDatas();
-	   movieList = new ArrayList (fs.search(typeOfSearch, whatToSearch));
+	   movieList = new ArrayList<Movie> (fs.search(typeOfSearch, whatToSearch));
 	   
 	   if (!movieListIsEmpty())
 	   {
