@@ -11,7 +11,7 @@ public class Movie {
 	 private String videoReleaseDate;
 	 private String imdbUrl;
 	 private Genre genre;
-	 private String averengeNote;
+	 private String averageRate;
 	
 	 
 	 public Movie(String movieId, String movieTitle, String releaseDate, String videoReleaseDate,
@@ -23,7 +23,7 @@ public class Movie {
 		 this.videoReleaseDate = videoReleaseDate;
 		 this.imdbUrl = imdbUrl;
 		 this.genre = genre;	
-		 averageNoteUser(data);
+		 averageUserRate(data);
 	 }
 	 
 	 public String getMovieId(){return this.movieId;}
@@ -32,7 +32,7 @@ public class Movie {
 	 public String getVideoReleaseDate(){return this.videoReleaseDate;}
 	 public String getImdbUrl(){return this.imdbUrl;}
 	 public Genre getGenre(){return this.genre;}
-	 public String getAverengeNote(){return this.averengeNote;}
+	 public String getAverageRate(){return this.averageRate;}
 
      public ArrayList<String> getAllGenres() {
          ArrayList<String> arr = new ArrayList<String>();
@@ -60,17 +60,17 @@ public class Movie {
      }
 
 	 
-	public void averageNoteUser(Collection<Data> data)
+	public void averageUserRate(Collection<Data> data)
 	{
-		 int note = 0, numRating = 0;
+		 int rate = 0, numRating = 0;
 		for(Data d : data)
 		{
 			if(d.getItemId().equals(this.movieId))
 			{
 				numRating++;
-				note = note + Integer.parseInt(d.getRating());
+				rate = rate + Integer.parseInt(d.getRating());
 			}
 		}
-		this.averengeNote = String.valueOf(note/numRating);
+		this.averageRate = String.valueOf(rate/numRating);
 	}
 }

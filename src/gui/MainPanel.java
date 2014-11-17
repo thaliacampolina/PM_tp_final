@@ -21,7 +21,7 @@ public class MainPanel  extends JPanel implements ActionListener
    private FieldPanel rating = new FieldPanel ("Users' rating (1-5): " , 2);
    private JButton search = new JButton ("Search");
    private JButton clear = new JButton ("Clear");
-   private JScrollPane scroll = new JScrollPane();
+   private JScrollPane scroll;
    
    // Subs
    private JPanel informations		= new JPanel ();
@@ -37,13 +37,14 @@ public class MainPanel  extends JPanel implements ActionListener
    
    public MainPanel () 
    {
+       super();
 	   ButtonGroup RBGroup = new ButtonGroup ();
 	   
 	   // Seta comandos para os radio buttons
 	   nameRB.setActionCommand("nameOfMovie");
 	   yearRB.setActionCommand("dataReleaseOfMovie");
 	   genreRB.setActionCommand("genreOfMovie");
-	   ratingRB.setActionCommand("noteOfMovie");
+	   ratingRB.setActionCommand("rateOfMovie");
 	   
 	   // Seta o nome como padrao inicial
 	   nameRB.setSelected(true);
@@ -82,11 +83,10 @@ public class MainPanel  extends JPanel implements ActionListener
       
        // Criar e adicionar painel para exibir informacoes do filme
        informations.setLayout (new BoxLayout(informations, BoxLayout.Y_AXIS));
-       informations.setPreferredSize(new Dimension(767,461));
        scroll = new JScrollPane(informations);
-       //scroll.setViewportView (informations);
        scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);  
        scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+       scroll.getViewport().setPreferredSize(new Dimension(767,461));
        
        add (scroll);
        
@@ -155,7 +155,7 @@ public class MainPanel  extends JPanel implements ActionListener
 		   genre.enable();
 		   rating.disable();
 	   }
-	   else if (typeOfSearch.equals("noteOfMovie"))
+	   else if (typeOfSearch.equals("rateOfMovie"))
 	   {
 		   name.disable();
 		   year.disable();
@@ -175,7 +175,7 @@ public class MainPanel  extends JPanel implements ActionListener
 	   else if (typeOfSearch.equals("genreOfMovie"))
 		   whatToSearch = genre.getText();
 	   
-	   else if (typeOfSearch.equals("noteOfMovie"))
+	   else if (typeOfSearch.equals("rateOfMovie"))
 		   whatToSearch = rating.getText();
 	   
 	   if (whatToSearch.length() == 0)
@@ -204,6 +204,7 @@ public class MainPanel  extends JPanel implements ActionListener
    private void showMovies ()
    {
 	   FinalSearch fs = new FinalSearch ();
+       fs.readDatas();
 	   movieList = new ArrayList (fs.search(typeOfSearch, whatToSearch));
 	   
 	   if (!movieListIsEmpty())
@@ -223,7 +224,7 @@ public class MainPanel  extends JPanel implements ActionListener
 				   else
 					   s += movieGenres.get(y) + ", ";
 			   } 
-			   s += "Rating: "+movieList.get(i).getAverengeNote()+"<br>";
+			   s += "Rating: "+movieList.get(i).getAverageRate()+"<br>";
 			   s += "<br><br>";
 		   }
 		   informations.add(new JLabel (s));

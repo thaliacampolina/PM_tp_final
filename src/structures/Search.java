@@ -25,7 +25,7 @@ public class Search {
 	// idOfMovie: busca por id do filme		v
 	// genreOfMovie: busca por genero de filme	v
 	// urlOfMovie : busca por URL do filme		v
-	// noteOfMovie : busca por nota de usuário sobre o filme v
+	// rateOfMovie : busca por nota de usuário sobre o filme v
 	// dataReleaseOfMovie : busca por ano do filme		v
 	// dataVideoreleaseOfMovie			v
 	
@@ -43,7 +43,6 @@ public class Search {
 				selection.add(m);				
 			}
 		}
-		System.err.println("Filme nao encontrado!!!");
 		return selection;
 	}	
 	
@@ -73,13 +72,13 @@ public class Search {
 			//System.out.println("entrou");
 			return m.getVideoReleaseDate().equals(data);
 		}
-		else if(this.typeOfSearch.equals("noteOfMovie"))
+		else if(this.typeOfSearch.equals("rateOfMovie"))
 		{
-			//System.out.println("noteOfMovie");
-			//System.out.print("m.getAverengeNote() = "+m.getAverengeNote());
+			//System.out.println("rateOfMovie");
+			//System.out.print("m.getAverageRate() = "+m.getAverageRate());
 			//System.out.println("data = "+data);
 			//System.out.println();
-			return m.getAverengeNote().equals(data);
+			return m.getAverageRate().equals(data);
 		}
 		else if(this.typeOfSearch.equals("genreOfMovie"))
 		{
