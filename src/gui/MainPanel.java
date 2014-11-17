@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 import javax.swing.*;
 
+import structures.FinalSearch;
+import structures.Genre;
 import structures.Movie;
 
 public class MainPanel  extends JPanel implements ActionListener
@@ -107,7 +109,8 @@ public class MainPanel  extends JPanel implements ActionListener
        else if (obj == search)
        {
     	   clear ();
-    	   
+    	   getTextView ();
+    	   showMovies ();
        }
        else if (obj == clear)
        {
@@ -186,7 +189,7 @@ public class MainPanel  extends JPanel implements ActionListener
 	   return true;
    }
    
-   private boolean movieListIsEmpty (ArrayList<Movie> movieList)
+   private boolean movieListIsEmpty ()
    {
 	   if (movieList.size() == 0)
 	   {
@@ -201,7 +204,25 @@ public class MainPanel  extends JPanel implements ActionListener
    
    private void showMovies ()
    {
+	   FinalSearch fs = new FinalSearch ();
+	   movieList = new ArrayList (fs.search(typeOfSearch, whatToSearch));
 	   
+	   if (!movieListIsEmpty())
+	   {
+		   String s = "<html>";
+		   for (int i = 0 ; i < movieList.size() ; i++)
+		   {
+			   s += "Name: "+movieList.get(i).getMovieTitle()+"<br>";
+			   s += "Year: "+movieList.get(i).getReleaseDate()+"<br>";
+			   s += "Release date: "+movieList.get(i).getVideoReleaseDate()+"<br>";
+			   // adicionar generos
+			   s += "Rating: "+movieList.get(i).getAverengeNote()+"<br>";
+			   s += "<br><br>";
+		   }
+		   informations.add(new JLabel (s));
+    	   informations.validate();
+    	   informations.repaint();
+	   }
    }
 }
 

@@ -1,4 +1,5 @@
 import static javax.swing.SwingUtilities.invokeLater;
+import structures.FinalSearch;
 
 public class Tp_final {
     
