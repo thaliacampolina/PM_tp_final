@@ -9,9 +9,13 @@ public class SearchWindow extends JDialog
 	public SearchWindow ()
 	{
 		// Titulo
+<<<<<<< HEAD
                 super();
                 setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
 		setTitle("Busca de filmes");
+=======
+		setTitle("Movie search");
+>>>>>>> 7a1b80abf6d042bc369620b9711b9c1127a940e3
 		
 		// Tamanho
 		setSize(800,600);
@@ -34,10 +38,5 @@ public class SearchWindow extends JDialog
 		// Visivel
 		//setVisible(true);
 	}
-	/*
-	public static void main (String[] args)
-	   {
-		   new SearchWindow ();
-	   }*/
 }    
 
