@@ -100,7 +100,6 @@ public class MainPanel  extends JPanel implements ActionListener
        
        if (obj instanceof JRadioButton)
        {
-    	   informations.add(new JLabel (e.getActionCommand()));
     	   typeOfSearch = e.getActionCommand();
     	   updateEditable ();
     	   informations.validate();
