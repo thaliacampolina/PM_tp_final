@@ -204,6 +204,7 @@ public class MainPanel  extends JPanel implements ActionListener
    private void showMovies ()
    {
 	   FinalSearch fs = new FinalSearch ();
+       fs.readDatas();
 	   movieList = new ArrayList (fs.search(typeOfSearch, whatToSearch));
 	   
 	   if (!movieListIsEmpty())
