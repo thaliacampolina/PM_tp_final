@@ -106,7 +106,7 @@ public class MainPanel  extends JPanel implements ActionListener
        else if (obj == search)
        {
     	   clear ();
-    	   getTextView ();
+    	   getEditText ();
     	   showMovies ();
        }
        else if (obj == clear)
@@ -162,7 +162,7 @@ public class MainPanel  extends JPanel implements ActionListener
 	   }
    }
    
-   private boolean getTextView ()
+   private boolean getEditText ()
    {
 	   if (typeOfSearch.equals("nameOfMovie"))
 		   whatToSearch = name.getText();
