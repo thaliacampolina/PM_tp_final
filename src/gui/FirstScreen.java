@@ -33,14 +33,10 @@ public class FirstScreen extends JFrame{
         menu.add(search);
         file.setMnemonic('F');
         search.setMnemonic('S');
-        JMenuItem importDatabase = new JMenuItem("Import database", 'I');
         JMenuItem exit = new JMenuItem("Exit", 'x');
         JMenuItem doSearch = new JMenuItem("Search movie", 'm');
-        importDatabase.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I, ActionEvent.CTRL_MASK));
         exit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X, ActionEvent.CTRL_MASK));
         doSearch.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_M, ActionEvent.CTRL_MASK));
-        file.add(importDatabase);
-        file.addSeparator();
         file.add(exit);
         search.add(doSearch);
         setJMenuBar(menu);
@@ -49,13 +45,6 @@ public class FirstScreen extends JFrame{
         exit.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 System.exit(0);
-            }
-        });
-        
-        importDatabase.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
-                new FinalSearch().readDatas();
-                JOptionPane.showMessageDialog(null, "Loaded successfully!", "Information", JOptionPane.INFORMATION_MESSAGE);
             }
         });
         
