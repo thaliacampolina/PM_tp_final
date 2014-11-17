@@ -31,6 +31,7 @@ public class MainPanel  extends JPanel implements ActionListener
    private String typeOfSearch		= "nameOfMovie";
    private String whatToSearch		= "";
    private ArrayList<Movie> movieList = new ArrayList<Movie> ();
+   private FinalSearch fs           = new FinalSearch ();
 
    
    public MainPanel () 
@@ -86,6 +87,7 @@ public class MainPanel  extends JPanel implements ActionListener
        scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
        scroll.getViewport().setPreferredSize(new Dimension(767,461));
        
+       fs.readDatas();
        add (scroll);
        
        setLayout (new FlowLayout (FlowLayout.LEFT));
@@ -201,8 +203,6 @@ public class MainPanel  extends JPanel implements ActionListener
    
    private void showMovies ()
    {
-        FinalSearch fs = new FinalSearch ();
-       fs.readDatas();
 	   movieList = new ArrayList<Movie> (fs.search(typeOfSearch, whatToSearch));
 	   
 	   if (!movieListIsEmpty())
