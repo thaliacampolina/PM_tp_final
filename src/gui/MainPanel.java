@@ -211,7 +211,7 @@ public class MainPanel  extends JPanel implements ActionListener
 		   String s = "<html>";
 		   for (int i = 0 ; i < movieList.size() ; i++)
 		   {
-			   s += "Name: "+movieList.get(i).getMovieTitle()+"";
+			   s += "Name: "+movieList.get(i).getMovieTitle()+"<br>";
 			   s += "Year: "+movieList.get(i).getReleaseDate()+"<br>";
 			   s += "Release date: "+movieList.get(i).getVideoReleaseDate()+"<br>";
 			   ArrayList<String> movieGenres = movieList.get(i).getAllGenres();
