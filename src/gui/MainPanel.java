@@ -44,7 +44,7 @@ public class MainPanel  extends JPanel implements ActionListener
 	   nameRB.setActionCommand("nameOfMovie");
 	   yearRB.setActionCommand("dataReleaseOfMovie");
 	   genreRB.setActionCommand("genreOfMovie");
-	   ratingRB.setActionCommand("noteOfMovie");
+	   ratingRB.setActionCommand("rateOfMovie");
 	   
 	   // Seta o nome como padrao inicial
 	   nameRB.setSelected(true);
@@ -155,7 +155,7 @@ public class MainPanel  extends JPanel implements ActionListener
 		   genre.enable();
 		   rating.disable();
 	   }
-	   else if (typeOfSearch.equals("noteOfMovie"))
+	   else if (typeOfSearch.equals("rateOfMovie"))
 	   {
 		   name.disable();
 		   year.disable();
@@ -175,7 +175,7 @@ public class MainPanel  extends JPanel implements ActionListener
 	   else if (typeOfSearch.equals("genreOfMovie"))
 		   whatToSearch = genre.getText();
 	   
-	   else if (typeOfSearch.equals("noteOfMovie"))
+	   else if (typeOfSearch.equals("rateOfMovie"))
 		   whatToSearch = rating.getText();
 	   
 	   if (whatToSearch.length() == 0)
@@ -224,7 +224,7 @@ public class MainPanel  extends JPanel implements ActionListener
 				   else
 					   s += movieGenres.get(y) + ", ";
 			   } 
-			   s += "Rating: "+movieList.get(i).getAverengeNote()+"<br>";
+			   s += "Rating: "+movieList.get(i).getAverageRate()+"<br>";
 			   s += "<br><br>";
 		   }
 		   informations.add(new JLabel (s));

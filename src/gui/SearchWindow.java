@@ -9,7 +9,7 @@ public class SearchWindow extends JFrame
 	public SearchWindow ()
 	{
 		// Titulo
-		setTitle("Busca de filmes");
+		setTitle("Movie search");
 		
 		// Tamanho
 		setSize(800,600);
