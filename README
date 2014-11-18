@@ -4,3 +4,15 @@ Isabel Bicalho
 Patricia Gomes
 Thalia Campolina
 
+* Para compilar, rodar 'make' dentro da pasta 'src'.
+* Para compilar e executar, rodar 'make run' dentro da pasta 'src'
+
+Arquivos e documentos:
+* Pasta src: pasta com o codigo do trabalho..
+* Pasta 'filmes100k': pasta que contem os arquivos com a base de dados
+* Arquivo 'filmesREADME': arquivo que ajuda a entender os arquivos dentro da pasta
+filmes100k com os dados dos filmes.
+* Arquivo 'PM-documentacao.pdf': documentacao (relatorio) do trabalho.
+* Arquivo 'DiagramaClasses.bmp': arquivo com imagem do diagrama de classes (essa
+imagem também está incluída na documentacao.
+

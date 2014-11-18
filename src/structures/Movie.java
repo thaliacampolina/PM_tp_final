@@ -34,6 +34,7 @@ public class Movie {
 	 public Genre getGenre(){return this.genre;}
 	 public String getAverageRate(){return this.averageRate;}
 
+    //retorna todos os generos de um filme em string
      public ArrayList<String> getAllGenres() {
          ArrayList<String> arr = new ArrayList<String>();
          if (this.genre.getUnknown() == 1) { arr.add("unknown"); }

@@ -26,14 +26,12 @@ public class FinalSearch {
     	// dataReleaseOfMovie : busca por ano do filme		
     	// dataVideoreleaseOfMovie
 		
-		//AQUI VOCE COLOCA O DADO QUE O USUARIO DIGITOU REFERENTE A BUSCA
 		
 		OpenFiles op = new OpenFiles(NAME_FILE_USERS, NAME_FILE_DATA,
 				NAME_FILE_MOVIE, NAME_FILE_GENRE);
 		
 		//collection para as entidades
 		Collection<User> users = new ArrayList<User>();
-		//List users = new ArrayList();
 		Collection<Movie> movie = new ArrayList<Movie>();
 		Collection<Data> data = new ArrayList<Data>();
 	
@@ -60,8 +58,7 @@ public class FinalSearch {
 		Search search = new Search(typeOfSearch);
 		selection = search.firstsearch(this.m, dataOfSearch);
 		
-		//POR FIM TE RETORNO TODOS OS OBJETOS QUE POSSUEM OS DADOS SOLICITADOS
-		//System.out.println("genre"+m.getGenre());	
+		//POR FIM RETORNO TODOS OS OBJETOS QUE POSSUEM OS DADOS SOLICITADOS
 		return selection;
 	}
 }

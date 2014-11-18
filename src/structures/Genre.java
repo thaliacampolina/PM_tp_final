@@ -1,6 +1,7 @@
 package structures;
 
 public class Genre {
+    //cada filme pode ter mais de um tipo de genero
 	 private int unknown;
 	 private int action;
 	 private int adventure;
@@ -64,9 +65,8 @@ public class Genre {
 	 public int getWar(){return war;}
 	 public int getWestern(){return western;}
 	 
-	 public int discoveryGenre(String nameGenre)
+	 public int discoverGenre(String nameGenre)
 	 {
-		 //System.out.println("nameGenre = "+nameGenre);
 		 if(nameGenre.equals("unknown"))
 		 {
 			 return this.unknown;

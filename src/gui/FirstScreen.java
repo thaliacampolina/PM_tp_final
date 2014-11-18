@@ -19,7 +19,7 @@ public class FirstScreen extends JFrame{
         //JFrame declarations section
         super();
         setLayout(new BorderLayout());
-        setTitle("Nome do Programa");
+        setTitle("Movie Search");
         setSize(500, 400);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

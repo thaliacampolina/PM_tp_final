@@ -9,12 +9,6 @@ public class Search {
 	
 	private static final Movie NULL = null;
 	private String typeOfSearch;
-	//trabalhos futuros: busca de nome
-	// busca de ano
-	//busca de genero
-	//busca de id
-	//busca de URL
-	//busca de notas de usuarios
 	public Search(String typeOfSearch)
 	{
 		this.typeOfSearch = typeOfSearch;
@@ -34,12 +28,9 @@ public class Search {
 		Collection<Movie> selection = new ArrayList<Movie>();
 		for(Movie m : movies)
 		{
-			//System.out.println("entrou foooooor");
 			boolean decisao = discoversMethod(m, data);
-			//System.out.println("decisao = "+decisao);
 			if(decisao)
 			{
-				//System.out.println("entrou iffffff");
 				selection.add(m);				
 			}
 		}
@@ -48,11 +39,8 @@ public class Search {
 	
 	public boolean discoversMethod(Movie m, String data)
 	{
-		//System.out.println("fora   this.typeOfSearch = "+this.typeOfSearch);
 		if(this.typeOfSearch.equals("nameOfMovie"))
 		{
-			//System.out.println("m.getMovieTitle() = "+m.getMovieTitle());
-			//System.out.println("data = "+data);
 			return m.getMovieTitle().toLowerCase().contains(data.toLowerCase());
 		}
 		else if(this.typeOfSearch.equals("idOfMovie"))
@@ -69,20 +57,15 @@ public class Search {
 		}
 		else if(this.typeOfSearch.equals("dataVideoreleaseOfMovie"))
 		{
-			//System.out.println("entrou");
 			return m.getVideoReleaseDate().equals(data);
 		}
 		else if(this.typeOfSearch.equals("rateOfMovie"))
 		{
-			//System.out.println("rateOfMovie");
-			//System.out.print("m.getAverageRate() = "+m.getAverageRate());
-			//System.out.println("data = "+data);
-			//System.out.println();
 			return m.getAverageRate().equals(data);
 		}
 		else if(this.typeOfSearch.equals("genreOfMovie"))
 		{
-			int value = m.getGenre().discoveryGenre(data);
+			int value = m.getGenre().discoverGenre(data);
 			if(value == 1)
 			{
 				return true;

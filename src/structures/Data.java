@@ -1,6 +1,7 @@
 package structures;
 
 public class Data {
+    //dados do filme cruzados com os usuarios, e os ratings
 	private String userId;
 	private String itemId;
 	private String rating;
